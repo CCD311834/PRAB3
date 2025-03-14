@@ -1,16 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 
 <head>
-    <title></title>
+    <title>CRUD APP B3</title>
+    <link rel="stylesheet" href="css/main.css">
     <?php require_once 'head.php'; ?>
 </head>
-
 <body>
     
     <div class="container">
-    <h1>Users</h1>
-        <a href="taken/create.php">Nieuwe tool &gt;</a>
+    <h1>Developer land</h1>
+        <a href="home.html">Inloggen &gt;</a>
 
         <?php
             require_once 'backend/conn.php';
