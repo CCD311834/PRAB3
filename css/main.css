@@ -288,21 +288,20 @@ label{
   }
 }
 
-.logohome{
- align-items: center; 
- width: 100px; 
- height: auto;
-}
 
 *{
   text-decoration: none;
 }
 
 .navbar{
-  background-color: rgb(115, 67, 228); 
+  background: linear-gradient(
+    to left,
+     blue,rgb(2, 217, 2)
+  ); 
   font-family: calibri; 
   padding-right: 15px; 
   padding-left: 15px;
+  width: auto;
 }
 
 .navdiv{
@@ -322,7 +321,7 @@ button{
 button a{
   color: white;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 22px;
 }
 
 button:hover{
@@ -339,11 +338,33 @@ li{
 
 li a{
   color: rgb(0, 255, 255);
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   margin-right: 30px;
 }
 
 li a:hover{
   color: white;
+}
+
+.logobody{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.logohome{
+  width: 40%;
+ }
+
+body{
+  background: linear-gradient(
+    to left,
+     blue,rgb(2, 217, 2)
+  );
+}
+
+header{
+  padding-bottom: 20px;
 }
