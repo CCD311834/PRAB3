@@ -15,6 +15,10 @@
         header("Location: index.php?msg=$msg");
         exit;
     }
+    if(isset($_GET['error'])) {
+        $msg = $_GET['error'];
+        header("msg=$msg");
+    }
     ?>
     <h1>Login</h1>
     <form action="backend/loginController.php" method="post">

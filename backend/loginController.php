@@ -14,12 +14,16 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 if($statement->rowCount() < 1)
 {
-    die("Error: account bestaat niet");
+    $error = "Account bestaat niet";
+    header("Location: ../login.php?error=$error");
+    exit;
 }
 
 if(!password_verify($password, $user['password']))
 {
-    die("Error: wachtwoord niet juist!");
+    $error = "Wachtwoord niet juist";
+    header("Location: ../login.php?error=$error");
+    exit;
 }
 
 $_SESSION['user_id'] = $user['id'];
