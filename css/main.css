@@ -379,6 +379,13 @@ th, td {
     text-align: left;
 }
 
+td:nth-child(even) a {
+    color: #007bff;
+}
+td:nth-child(odd) a {
+    color: #ff3300;
+}
+
 th {
     background-color: #f4f4f4;
     font-weight: bold;
@@ -390,4 +397,28 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #e6f7ff;
+}
+
+.links-container {
+    margin-top: 20px;
+}
+
+.top-links {
+    display: flex;
+    gap: 20px;
+    justify-content:space-between;
+    margin-bottom: 20px;
+}
+
+.afdelingen-links {
+    display: flex;
+    gap: 20px;
+    justify-content:space-between;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(206, 199, 199);
+    font-weight: bold;
 }

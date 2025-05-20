@@ -6,13 +6,7 @@ if(!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$afdelingen = ['horeca', 'attracties', 'merchandise'];
-if (!isset($_GET['afdeling']) || !in_array($_GET['afdeling'], $afdelingen)) {
-    header("Location: index.php?msg=Ongeldige afdeling");
-    exit;
-}
-
-$afdeling = $_GET['afdeling'];
+$user = $_SESSION['user_id'];
 
 require_once __DIR__.'/../backend/config.php';
 ?>
@@ -20,7 +14,7 @@ require_once __DIR__.'/../backend/config.php';
 <html lang="nl">
 
 <head>
-    <title>Taken - Afdeling <?php echo $afdeling; ?></title>
+    <title>Taken - User <?php echo $user; ?></title>
     <?php require_once __DIR__.'/../components/head.php'; ?>
 </head>
 
@@ -31,15 +25,14 @@ require_once __DIR__.'/../backend/config.php';
         {
             echo "<div class='msg'>" . $_GET['msg'] . "</div>";
         } ?>
-        <h1>Taken voor afdeling: <?php echo $afdeling; ?></h1>
+        <h1>Taken voor user <?php echo $user; ?></h1>
         <b><a href="create.php">Nieuwe taak &gt;</a></b>
-        
 
         <?php
             require_once __DIR__.'/../backend/conn.php';
-            $query = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY CASE WHEN deadline IS NULL THEN 1 ELSE 0 END, deadline";
+            $query = "SELECT * FROM taken WHERE user = :user ORDER BY CASE WHEN deadline IS NULL THEN 1 ELSE 0 END, deadline";
             $statement = $conn->prepare($query);
-            $statement->execute([':afdeling' => $afdeling]);
+            $statement->execute(['user' => $user]);
             $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
@@ -73,7 +66,7 @@ require_once __DIR__.'/../backend/config.php';
                 <?php endforeach; ?>
             </table>
         <?php else: ?>
-            <p>Er zijn geen taken voor deze afdeling.</p>
+            <p>Je hebt nog geen taken gepland.</p>
         <?php endif; ?>
         
         <b><a href="index.php">Terug naar alle taken</a></b>

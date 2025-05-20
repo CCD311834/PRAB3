@@ -62,7 +62,17 @@ require_once __DIR__.'/../backend/config.php';
             <?php endforeach; ?>
         </table>
 
-        <b><a href="done.php">Alle voltooide taken</a></b>
+        <div class="links-container">
+            <div class="top-links">
+                <b><a href="done.php">Alle voltooide taken</a></b>
+                <b><a href="my.php">Mijn taken</a></b>
+            </div>
+            <div class="afdelingen-links">
+                <b><a href="afdeling.php?afdeling=horeca">Alle Horeca taken</a></b>
+                <b><a href="afdeling.php?afdeling=attracties">Alle Attracties taken</a></b>
+                <b><a href="afdeling.php?afdeling=merchandise">Alle Merchandise taken</a></b>
+            </div>
+        </div>
     </div>
 </body>
 
