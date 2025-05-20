@@ -57,7 +57,7 @@ date_default_timezone_set('Europe/Amsterdam'); // Ik zag dat de tijd 2 uur achte
             </div>
             <div class="form-group">
                 <label for="datum_aangemaakt">Aangemaakt op:</label>
-                <input type="datetime-local" name="datum_aangemaakt" id="datum_aangemaakt" value="<?php echo date('Y-m-d\TH:i'); ?>" class="form-input" readonly>
+                <input type="datetime-local" name="datum_aangemaakt" id="datum_aangemaakt" value="<?php echo date('Y-m-d\TH:i:s'); ?>" class="form-input" readonly>
             </div>
             <input type="submit" value="Verstuur melding">
             <input type="hidden" name="action" value="create">

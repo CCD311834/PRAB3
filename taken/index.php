@@ -27,7 +27,7 @@ require_once __DIR__.'/../backend/config.php';
 
         <?php
             require_once '../backend/conn.php';
-            $query = "SELECT * FROM taken WHERE voortgang <> 'done' ORDER BY deadline";
+            $query = "SELECT * FROM taken WHERE voortgang <> 'done' ORDER BY CASE WHEN deadline IS NULL THEN 1 ELSE 0 END, deadline";
             $statement = $conn->prepare($query);
             $statement->execute();
             $taken = $statement->fetchAll(PDO::FETCH_ASSOC);

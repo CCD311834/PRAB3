@@ -22,7 +22,7 @@ require_once __DIR__.'/../backend/config.php';
 
         <?php
             require_once __DIR__.'/../backend/conn.php';
-            $query = "SELECT taak, afdeling FROM taken WHERE voortgang = 'done'";
+            $query = "SELECT * FROM taken WHERE voortgang = 'done' ORDER BY CASE WHEN deadline IS NULL THEN 1 ELSE 0 END, deadline";
             $statement = $conn->prepare($query);
             $statement->execute();
             $doneTaken = $statement->fetchAll(PDO::FETCH_ASSOC);
