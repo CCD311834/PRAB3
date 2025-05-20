@@ -33,34 +33,38 @@ require_once __DIR__.'/../backend/config.php';
             $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
-        <table>
-            <tr>
-                <th>User</th>
-                <th>Taak</th>
-                <th>Beschrijving</th>
-                <th>Afdeling</th>
-                <th>Taakgever</th>
-                <th>Deadline</th>
-                <th>Datum aangemaakt</th>
-                <th>Voortgang</th>
-                <th>Verwijderen</th>
-                <th>Aanpassen</th>
-            </tr>
-            <?php foreach($taken as $taak): ?>
+        <?php if(count($taken) > 0): ?>
+            <table>
                 <tr>
-                    <td><?php echo $taak['user']; ?></td>
-                    <td><?php echo $taak['taak']; ?></td>
-                    <td><?php echo $taak['beschrijving']; ?></td>
-                    <td><?php echo $taak['afdeling']; ?></td>
-                    <td><?php echo $taak['taakgever']; ?></td>
-                    <td><?php echo $taak['deadline']; ?></td>
-                    <td><?php echo $taak['datum_aangemaakt']; ?></td>
-                    <td><?php echo $taak['voortgang']; ?></td>
-                    <td><a href="delete.php?id=<?php echo $taak['id'];?>">verwijderen</a></td>
-                    <td><a href="edit.php?id=<?php echo $taak['id'];?>">aanpassen</a></td>
+                    <th>User</th>
+                    <th>Taak</th>
+                    <th>Beschrijving</th>
+                    <th>Afdeling</th>
+                    <th>Taakgever</th>
+                    <th>Deadline</th>
+                    <th>Datum aangemaakt</th>
+                    <th>Voortgang</th>
+                    <th>Verwijderen</th>
+                    <th>Aanpassen</th>
                 </tr>
-            <?php endforeach; ?>
-        </table>
+                <?php foreach($taken as $taak): ?>
+                    <tr>
+                        <td><?php echo $taak['user']; ?></td>
+                        <td><?php echo $taak['taak']; ?></td>
+                        <td><?php echo $taak['beschrijving']; ?></td>
+                        <td><?php echo $taak['afdeling']; ?></td>
+                        <td><?php echo $taak['taakgever']; ?></td>
+                        <td><?php echo $taak['deadline']; ?></td>
+                        <td><?php echo $taak['datum_aangemaakt']; ?></td>
+                        <td><?php echo $taak['voortgang']; ?></td>
+                        <td><a href="delete.php?id=<?php echo $taak['id'];?>">verwijderen</a></td>
+                        <td><a href="edit.php?id=<?php echo $taak['id'];?>">aanpassen</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php else: ?>
+            <p>Er zijn nog geen taken gepland.</p>
+        <?php endif; ?>
 
         <div class="links-container">
             <div class="top-links">

@@ -1,5 +1,5 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET time_zone = "+02:00";
 
 --
 -- Database: `takenlijst`
@@ -15,13 +15,14 @@ USE `takenlijst`;
 DROP TABLE IF EXISTS `taken`;
 CREATE TABLE IF NOT EXISTS `taken` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titel` varchar(255) NOT NULL,
-  `beschrijving` text NOT NULL,
-  `afdeling` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL DEFAULT 'todo',
+  `taak` varchar(255) NOT NULL,
+  `taakgever` varchar(255) DEFAULT NULL,
+  `beschrijving` varchar(255) DEFAULT NULL,
+  `afdeling` enum('horeca', 'attracties', 'merchandise') NOT NULL,
+  `voortgang` enum('todo', 'in progress', 'done') NOT NULL,
   `deadline` date DEFAULT NULL,
   `user` int(11) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
+  `datum_aangemaakt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
