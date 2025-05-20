@@ -26,7 +26,7 @@ require_once __DIR__.'/../backend/config.php';
         <b><a href="create.php">Nieuwe taak &gt;</a></b>
 
         <?php
-            require_once '../backend/conn.php';
+            require_once __DIR__.'/../backend/conn.php';
             $query = "SELECT * FROM taken WHERE voortgang <> 'done' ORDER BY CASE WHEN deadline IS NULL THEN 1 ELSE 0 END, deadline";
             $statement = $conn->prepare($query);
             $statement->execute();
@@ -62,7 +62,6 @@ require_once __DIR__.'/../backend/config.php';
 
         <b><a href="done.php">Alle voltooide taken</a></b>
     </div>
-
 </body>
 
 </html>
