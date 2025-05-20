@@ -6,7 +6,7 @@ if(!isset($_SESSION['user_id'])) {
     exit;
 }
 require_once __DIR__.'/../backend/config.php';
-date_default_timezone_set('Europe/Amsterdam'); // Ik zag dat de tijd 2 uur achterliep, dus ik heb de tijdzone aangepast naar Amsterdam.
+date_default_timezone_set('Europe/Amsterdam'); // Ik zag dat de tijd 2 uur achterliep met het aanmaken van een taak, dus ik heb de tijdzone aangepast naar Amsterdam.
 ?>
 <!doctype html>
 <html lang="nl">
