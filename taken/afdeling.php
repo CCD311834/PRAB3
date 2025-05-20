@@ -40,6 +40,7 @@ require_once __DIR__.'/../backend/config.php';
         <?php if(count($taken) > 0): ?>
             <table>
                 <tr>
+                    <th>User</th>
                     <th>Taak</th>
                     <th>Beschrijving</th>
                     <th>Afdeling</th>
@@ -52,6 +53,7 @@ require_once __DIR__.'/../backend/config.php';
                 </tr>
                 <?php foreach($taken as $taak): ?>
                     <tr>
+                        <td><?php echo $taak['user']; ?></td>
                         <td><?php echo $taak['taak']; ?></td>
                         <td><?php echo $taak['beschrijving']; ?></td>
                         <td><?php echo $taak['afdeling']; ?></td>

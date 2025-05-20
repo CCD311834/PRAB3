@@ -6,7 +6,6 @@ if(!isset($_SESSION['user_id'])) {
     exit;
 }
 require_once __DIR__.'/../backend/config.php';
-date_default_timezone_set('Europe/Amsterdam'); // Ik zag dat de tijd 2 uur achterliep met het aanmaken van een taak, dus ik heb de tijdzone aangepast naar Amsterdam.
 ?>
 <!doctype html>
 <html lang="nl">
@@ -21,6 +20,10 @@ date_default_timezone_set('Europe/Amsterdam'); // Ik zag dat de tijd 2 uur achte
     <div class="container">
         <h1>Nieuwe Taak</h1>
         <form action="<?php echo $base_url; ?>/backend/takenController.php" method="POST">
+            <div class="form-group">
+                <label for="user">User</label>
+                <input type="text" name="user" id="user" class="form-input" value="<?php echo $_SESSION['user_id']; ?>" readonly>
+            </div>
             <div class="form-group">
                 <label for="taak">Taak</label>
                 <input type="text" name="taak" id="taak" class="form-input" required>

@@ -11,6 +11,7 @@ require_once 'config.php';
 $action = $_POST['action'];
 
 if ($action == 'create'){
+    $user = $_POST['user'];
     $taak = $_POST['taak'];
     $afdeling = $_POST['afdeling'];
     $beschrijving = $_POST['beschrijving'];
@@ -24,10 +25,11 @@ if ($action == 'create'){
     $voortgang = $_POST['voortgang'];
 
     require_once 'conn.php';
-    $query = "INSERT INTO taken (taak, afdeling, beschrijving, taakgever, deadline, datum_aangemaakt, voortgang)
-    VALUES(:taak, :afdeling, :beschrijving, :taakgever, :deadline, :datum_aangemaakt, :voortgang)";
+    $query = "INSERT INTO taken (user, taak, afdeling, beschrijving, taakgever, deadline, datum_aangemaakt, voortgang)
+    VALUES(:user, :taak, :afdeling, :beschrijving, :taakgever, :deadline, :datum_aangemaakt, :voortgang)";
     $statement = $conn->prepare($query);
     $statement->execute([
+        ":user" => $user,
         ":taak" => $taak,
         ":afdeling" => $afdeling,
         ":beschrijving" => $beschrijving,

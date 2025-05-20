@@ -30,6 +30,10 @@ require_once __DIR__.'/../backend/config.php';
             <?php foreach($taken as $taak): ?>
                 <h1>Taak #<?php echo $taak['id']; ?> aanpassen</h1>
                 <div class="form-group">
+                    <label for="user">User:</label>
+                    <input type="text" name="user" id="user" value="<?php echo $taak['user']; ?>" readonly>
+                </div>
+                <div class="form-group">
                     <label for="taak">Taak:</label>
                     <input type="text" name="taak" id="taak" value="<?php echo $taak['taak']; ?>" required>
                 </div>
@@ -55,7 +59,7 @@ require_once __DIR__.'/../backend/config.php';
                 </div>
                 <div class="form-group">
                     <label for="voortgang">Voortgang:</label>
-                    <select name="voortgang" id="voortgang" class="form-input" required>
+                    <select name="voortgang" id="voortgang" required>
                         <option value="<?php echo $taak['voortgang']; ?>"><?php echo $taak['voortgang']; ?></option>
                         <option value="todo">Todo</option>
                         <option value="in progress">In progress</option>
