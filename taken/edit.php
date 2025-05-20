@@ -31,7 +31,7 @@ require_once __DIR__.'/../backend/config.php';
                 <h1>Taak #<?php echo $taak['id']; ?> aanpassen</h1>
                 <div class="form-group">
                     <label for="taak">Taak:</label>
-                    <?php echo $taak['taak']; ?>
+                    <input type="text" name="taak" id="taak" value="<?php echo htmlspecialchars($taak['taak']); ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="beschrijving">Beschrijving:</label>
@@ -39,7 +39,11 @@ require_once __DIR__.'/../backend/config.php';
                 </div>
                 <div class="form-group">
                     <label for="afdeling">Afdelingen:</label>
-                    <?php echo $taak['afdeling']; ?>
+                    <select name="afdeling" id="afdeling" required>
+                        <option value="horeca" <?php if($taak['afdeling'] === 'horeca') echo 'selected'; ?>>horeca</option>
+                        <option value="attracties" <?php if($taak['afdeling'] === 'attracties') echo 'selected'; ?>>attracties</option>
+                        <option value="merchandise" <?php if($taak['afdeling'] === 'merchandise') echo 'selected'; ?>>merchandise</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="taakgever">Taakgever:</label>
@@ -47,14 +51,7 @@ require_once __DIR__.'/../backend/config.php';
                 </div>
                 <div class="form-group">
                     <label for="deadline">Deadline:</label>
-                    <?php
-                    $deadlineValue = '';
-                    if (!empty($taak['deadline'])) {
-                        $deadline = new DateTime($taak['deadline']);
-                        $deadlineValue = $deadline->format('Y-m-d\TH:i');
-                    }
-                    ?>
-                    <input type="datetime-local" name="deadline" id="deadline" value="<?php echo $deadlineValue; ?>" class="form-input">
+                    <?php echo $taak['deadline']; ?>
                 </div>
                 <div class="form-group">
                     <label for="voortgang">Voortgang:</label>
@@ -67,7 +64,7 @@ require_once __DIR__.'/../backend/config.php';
                 </div>
                 <div class="form-group">
                     <label for="datum_aangemaakt">Aangemaakt op:</label>
-                    <input type="datetime-local" name="datum_aangemaakt" id="datum_aangemaakt" value="<?php echo $taak['datum_aangemaakt']; ?>" class="form-input" readonly>
+                    <?php echo $taak['datum_aangemaakt']; ?>
                 </div>
             <?php endforeach; ?>
 
