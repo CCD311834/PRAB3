@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Alfa Slab One ', cursive;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+    to left,
+     blue,rgb(2, 217, 2)
+  );
+}
+
+.cardscontainer{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 8%;
+}
+
+.cardscontainer .card{
+    width: 308px;
+    position: relative;
+    height: 400px;
+    background: #f0f0f0;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.5px 10px #e6e6e6;
+    transition: 0.3s ease-in-out;
+    margin-top: 5%;
+}
+
+.cardscontainer .card .imgbx{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    top: -60px;
+    left: 20px;
+    box-shadow: 0 5px 20px rgba( 0, 0, 0, 1.2);
+}
+
+.cardscontainer .card .imgbx img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.imgbx:hover img{
+    transform: scale(1.1);
+}
+
+.logohome img{
+    width: 70%;
+  }
+
+h2{
+    font-size: 30px;
+    padding-top: 10%;
+}
+
+p{
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.horecah2{
+    font-size: 45px;
+}
+
+.attractieh2{
+    font-size: 45px;
+    padding-bottom: 20px;
+    position: relative;
+    top: 25px;
+}
+
+.merchh2{
+    font-size: 35px;
+}
+
+li a{
+    color: rgb(0, 255, 255);
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 100px;
+  }
+  
+li a:hover{
+    color: white;
+}
+  

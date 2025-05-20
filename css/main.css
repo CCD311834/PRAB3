@@ -288,12 +288,19 @@ label{
   }
 }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 *{
   text-decoration: none;
 }
 
 .navbar{
+<<<<<<< Updated upstream
+=======
+  background-color: rgb(115, 67, 228); 
+>>>>>>> Stashed changes
   background: linear-gradient(
     to left,
      blue,rgb(2, 217, 2)
@@ -305,6 +312,7 @@ label{
 }
 
 .navdiv{
+<<<<<<< Updated upstream
   display: flex; 
   align-items: center; 
   justify-content: space-between;
@@ -334,13 +342,44 @@ button a:hover{
 
 li{
   list-style: none; display: inline-block;
+=======
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+button a{
+  color: rgb(0, 221, 255);
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 15px;  
+  font-size: 22px;
+}
+
+button a:hover{
+  color: black;
+  background-color: lightgreen;
+}
+
+li{
+  list-style: none;
+  display: inline-block;
+>>>>>>> Stashed changes
 }
 
 li a{
   color: rgb(0, 255, 255);
   font-size: 30px;
   font-weight: bold;
+<<<<<<< Updated upstream
   margin-right: 30px;
+=======
+  margin-right: 100px;
+>>>>>>> Stashed changes
 }
 
 li a:hover{
@@ -355,8 +394,13 @@ li a:hover{
 }
 
 .logohome{
+<<<<<<< Updated upstream
   width: 40%;
  }
+=======
+  width: 15%;
+}
+>>>>>>> Stashed changes
 
 body{
   background: linear-gradient(
