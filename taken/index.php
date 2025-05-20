@@ -42,7 +42,7 @@ require_once __DIR__.'/../backend/config.php';
                 <th>Deadline</th>
                 <th>Datum aangemaakt</th>
                 <th>Voortgang</th>
-                <!-- <th>Verwijderen</th> -->
+                <th>Verwijderen</th>
                 <th>Aanpassen</th>
             </tr>
             <?php foreach($taken as $taak): ?>
@@ -54,7 +54,7 @@ require_once __DIR__.'/../backend/config.php';
                     <td><?php echo $taak['deadline']; ?></td>
                     <td><?php echo $taak['datum_aangemaakt']; ?></td>
                     <td><?php echo $taak['voortgang']; ?></td>
-                    <!-- <td><a href="delete.php?id=<?php ## echo $taak['id'];?>">verwijderen</a></td> -->
+                    <td><a href="delete.php?id=<?php echo $taak['id'];?>">verwijderen</a></td>
                     <td><a href="edit.php?id=<?php echo $taak['id'];?>">aanpassen</a></td>
                 </tr>
             <?php endforeach; ?>

@@ -78,3 +78,13 @@ if ($action == 'update'){
 
     header("Location: ../taken/index.php?msg=Melding aangepast");
 }
+
+if ($action == 'delete') {
+    $id = $_POST['id'];
+    require_once 'conn.php';
+    $query = "DELETE FROM taken WHERE id = :id";
+    $statement = $conn->prepare($query);
+    $statement->execute([":id" => $id]);
+
+    header("Location: ../taken/index.php?msg=Taak verwijderd");
+}
