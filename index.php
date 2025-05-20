@@ -17,30 +17,6 @@
         echo "<div class='msg'>" . $_GET['msg'] . "</div>";
     }
     ?>
-        <h1>Accounts</h1>
-
-            <?php
-                require_once 'backend/conn.php';
-                $query = "SELECT * FROM users";
-                $statement = $conn->prepare($query);
-                $statement->execute();
-                $users = $statement->fetchAll(PDO::FETCH_ASSOC);
-            ?>
-
-            <table>
-                <tr>
-                    <th>Naam</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                </tr>
-                <?php foreach($users as $user): ?>
-                    <tr>
-                        <td><?php echo $user['naam']; ?></td>
-                        <td><?php echo $user['username']; ?></td>
-                        <td><?php echo $user['password']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
     </div>
 </body>
 

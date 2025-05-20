@@ -364,3 +364,30 @@ body{
 header{
   padding-bottom: 20px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    background: #fff;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e6f7ff;
+}

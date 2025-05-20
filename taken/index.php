@@ -23,11 +23,11 @@ require_once __DIR__.'/../backend/config.php';
             echo "<div class='msg'>" . $_GET['msg'] . "</div>";
         } ?>
         <h1>Taken</h1>
-        <a href="create.php">Nieuwe taak &gt;</a>
+        <b><a href="create.php">Nieuwe taak &gt;</a></b>
 
         <?php
             require_once '../backend/conn.php';
-            $query = "SELECT * FROM taken";
+            $query = "SELECT * FROM taken WHERE voortgang <> 'done' ORDER BY deadline";
             $statement = $conn->prepare($query);
             $statement->execute();
             $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -59,6 +59,8 @@ require_once __DIR__.'/../backend/config.php';
                 </tr>
             <?php endforeach; ?>
         </table>
+
+        <b><a href="done.php">Alle voltooide taken</a></b>
     </div>
 
 </body>

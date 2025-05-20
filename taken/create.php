@@ -23,7 +23,7 @@ date_default_timezone_set('Europe/Amsterdam'); // Ik zag dat de tijd 2 uur achte
         <form action="<?php echo $base_url; ?>/backend/takenController.php" method="POST">
             <div class="form-group">
                 <label for="taak">Taak</label>
-                <input type="text" name="taak" id="taak" class="form-input">
+                <input type="text" name="taak" id="taak" class="form-input" required>
             </div>
             <div class="form-group">
                 <label for="beschrijving">Beschrijving</label>

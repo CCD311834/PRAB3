@@ -31,7 +31,7 @@ require_once __DIR__.'/../backend/config.php';
                 <h1>Taak #<?php echo $taak['id']; ?> aanpassen</h1>
                 <div class="form-group">
                     <label for="taak">Taak:</label>
-                    <input type="text" name="taak" id="taak" value="<?php echo htmlspecialchars($taak['taak']); ?>" required>
+                    <input type="text" name="taak" id="taak" value="<?php echo $taak['taak']; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="beschrijving">Beschrijving:</label>
@@ -51,7 +51,7 @@ require_once __DIR__.'/../backend/config.php';
                 </div>
                 <div class="form-group">
                     <label for="deadline">Deadline:</label>
-                    <?php echo $taak['deadline']; ?>
+                    <input type="date" name="deadline" id="deadline" value="<?php echo $taak['deadline']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="voortgang">Voortgang:</label>
